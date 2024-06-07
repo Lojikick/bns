@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://b3ih5naq0swqk"
+path="res://.godot/imported/plgin_dialogue.dialogue-13bdd019bf414fc12289ee20fb8c0d8b.tres"
+
+[deps]
+
+source_file="res://pdialogue/plgin_dialogue.dialogue"
+dest_files=["res://.godot/imported/plgin_dialogue.dialogue-13bdd019bf414fc12289ee20fb8c0d8b.tres"]
+
+[params]
+
+defaults=true

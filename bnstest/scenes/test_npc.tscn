@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpqmxoerar1i7"]
+
+[ext_resource type="Script" path="res://scripts/test_npc.gd" id="1_rtgad"]
+[ext_resource type="Texture2D" uid="uid://cl74j1uuv07u0" path="res://assets/art/playerGrey_up1.png" id="1_vur8v"]
+[ext_resource type="Texture2D" uid="uid://cxlw5ies1aivi" path="res://assets/art/playerGrey_up2.png" id="2_f7rp7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ljbgo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vur8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_f7rp7")
+}],
+"loop": true,
+"name": &"npc_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qn0wj"]
+radius = 14.0
+height = 32.0
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_rtgad")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.21, 0.21)
+sprite_frames = SubResource("SpriteFrames_ljbgo")
+animation = &"npc_idle"
+frame = 1
+frame_progress = 0.428446
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_qn0wj")

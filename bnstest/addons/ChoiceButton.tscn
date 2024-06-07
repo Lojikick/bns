@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5wx04kbkjxx7"]
+
+[ext_resource type="Script" path="res://addons/ChoiceButton.gd" id="1_oj6vb"]
+
+[node name="ChoiceButton" type="Button"]
+text = "sample text"
+script = ExtResource("1_oj6vb")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
