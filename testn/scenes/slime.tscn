@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://bymlk0oub2eec"]
+
+[ext_resource type="Texture2D" uid="uid://c6e2unx3l5sib" path="res://assets/slime.png" id="1_env41"]
+[ext_resource type="Script" path="res://scenes/slime.gd" id="1_j1rkm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evd2i"]
+atlas = ExtResource("1_env41")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o58t3"]
+atlas = ExtResource("1_env41")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0piwf"]
+atlas = ExtResource("1_env41")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtcua"]
+atlas = ExtResource("1_env41")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b3e4y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evd2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o58t3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0piwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtcua")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rc3b"]
+radius = 63.0079
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vfbj7"]
+radius = 5.0
+
+[node name="slime" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_j1rkm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b3e4y")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.652617
+
+[node name="detectionarea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionarea"]
+shape = SubResource("CircleShape2D_3rc3b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_vfbj7")
+
+[connection signal="body_entered" from="detectionarea" to="." method="_on_detectionarea_body_entered"]
+[connection signal="body_exited" from="detectionarea" to="." method="_on_detectionarea_body_exited"]
