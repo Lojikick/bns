@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scenes/tilemap.gd" id="3_j2d0u"]
 [ext_resource type="Texture2D" uid="uid://cbqt3n5hrn8c4" path="res://assets/tilesets/tavenAndInn.png" id="3_mdohf"]
 [ext_resource type="Texture2D" uid="uid://c3my7hy1rpqx8" path="res://assets/tilesets/wallsAndFloors_withText.png" id="4_xbesb"]
-[ext_resource type="Script" path="res://scenes/health.gd" id="6_0y13j"]
+[ext_resource type="Script" path="res://scenes/anxiety.gd" id="6_wajht"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ic1fy"]
 texture = ExtResource("3_mdohf")
@@ -2304,5 +2304,5 @@ offset_top = 4.0
 offset_right = 54.0
 offset_bottom = 31.0
 value = 100.0
-script = ExtResource("6_0y13j")
+script = ExtResource("6_wajht")
 player = NodePath("../Player")

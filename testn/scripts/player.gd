@@ -5,9 +5,9 @@ extends CharacterBody2D
 const JUMP_VELOCITY = -400.0
 @export var speed = 200
 
-@export var maxHealth = 30
-@onready var currHealth: int = maxHealth
-signal healthChanged
+@export var maxAnx = 50
+@onready var currAnx: int = maxAnx
+signal anxChanged
 
 var idle_anim = {"side": "side_idle",
 				 "side_idle" : "side_idle",
@@ -68,7 +68,7 @@ func _physics_process(delta):
 			$AnimatedSprite2D.animation = "front"
 	move_and_slide()
 	
-func hurtByEnemy():
-	#Function that emits a signal if the player is hurt by an enemy. Currently not functional. 
-	currHealth -= 10
-	healthChanged.emit()
+func anxByEnemy():
+	#Function that emits a signal if the player is hurt (anxiety up) by an enemy. Currently not functional. 
+	currAnx -= 10
+	anxChanged.emit()
