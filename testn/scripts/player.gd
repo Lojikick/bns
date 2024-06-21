@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-
+@onready var actionable_finder: Area2D = $Direction/ActionableFinder
 const JUMP_VELOCITY = -400.0
 @export var speed = 200
 
@@ -17,6 +17,13 @@ var screen_size
 func _ready():
 	screen_size = get_viewport_rect().size
 
+#TBD: NICE: NOW IGNORE RESPONSES TO E BUTTOn
+func _unhandled_input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_input"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return
 func _physics_process(delta):
 	# Add the gravity.
 	#if not is_on_floor():
@@ -63,3 +70,5 @@ func _physics_process(delta):
 		else:
 			$AnimatedSprite2D.animation = "front"
 	move_and_slide()
+	
+	

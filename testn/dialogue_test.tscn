@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://baqq4ewh0b4v4"]
+
+[ext_resource type="Script" path="res://dialogue.gd" id="1_hi8b1"]
+[ext_resource type="PackedScene" uid="uid://d13t3renrqami" path="res://scenes/player.tscn" id="2_00n22"]
+[ext_resource type="PackedScene" uid="uid://bymlk0oub2eec" path="res://scenes/slime.tscn" id="2_t63f1"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_hi8b1")
+
+[node name="slime" parent="." instance=ExtResource("2_t63f1")]
+position = Vector2(180, 59)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(122, 66)
+scale = Vector2(71.0621, -13.5092)
+zoom = Vector2(4.685, 4.685)
+
+[node name="player" parent="." instance=ExtResource("2_00n22")]
+position = Vector2(63.62, 48.0157)

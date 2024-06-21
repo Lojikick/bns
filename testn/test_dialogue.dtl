@@ -1,0 +1,9 @@
+dungeon_master: Yooo Wassuo
+label goback
+dungeon_master: Hows it hanging
+- Not good! :D
+	dungeon_master: Thaats crazzy
+	dungeon_master: Okiee
+- ITs going good
+	[signal arg="its a signal"]
+	dungeon_master: Anmaaaaze balls Signal fired
