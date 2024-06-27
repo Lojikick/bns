@@ -6,8 +6,13 @@ const JUMP_VELOCITY = -400.0
 @export var speed = 200
 
 @export var maxAnx = 50
+@export var minTrust = 0
 @onready var currAnx: int = maxAnx
+@onready var currTrust: int = minTrust
+
 signal anxChanged
+signal trustChanged
+#emits a signal when anxiety is changed
 
 var idle_anim = {"side": "side_idle",
 				 "side_idle" : "side_idle",
@@ -68,7 +73,14 @@ func _physics_process(delta):
 			$AnimatedSprite2D.animation = "front"
 	move_and_slide()
 	
-func anxByEnemy():
-	#Function that emits a signal if the player is hurt (anxiety up) by an enemy. Currently not functional. 
+func anxietyAttacked():
+	#Function that emits a signal if the player is hurt (anxiety up) by an enemy.
+	#TODO: edit so that the anxiety is "attached" to "enemy", not player.
 	currAnx -= 10
 	anxChanged.emit()
+	
+func trustGained():
+	#Function that emits a signal if the player gains trust of an enemy.
+	#TODO: edit so that the trust is "attached" to "enemy", not player.
+	currTrust += 10
+	trustChanged.emit()
