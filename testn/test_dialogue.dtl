@@ -1,9 +1,30 @@
-dungeon_master: Yooo Wassuo
-label goback
-dungeon_master: Hows it hanging
-- Not good! :D
-	dungeon_master: Thaats crazzy
-	dungeon_master: Okiee
-- ITs going good
-	[signal arg="its a signal"]
-	dungeon_master: Anmaaaaze balls Signal fired
+Brum: Ok Bub, we're gonna ask you a series of Questions, and YOU BETTER be ready
+[signal arg="activate_something"]
+Anya: *shudders* uhhhm. Ok? I'll Try my Best
+Shelby: Don't mind him he's just a little excited! We'll take it slow if you need to
+Brum: *Ahem* Now, then, lets get into it
+- Gee have you been to this indian resturant before
+	Anya: Never actually, athough I'm really liking their Chumuk Chiken Burrito
+	- That's crazzzy! I love indian burritos, how long has this place been open for?
+		Anya: Its opened up recently, I was here just yesterday
+	- I was eying their cutney chaat nachos, you wanna split some?
+		Anya: Sure, who's payying though?
+	- DO U WANNA BE MY CHAMAK CHALLOO_ OOO___OOOO__))O
+		Anya: whaa~~~ OH SHIT I LOVE THAT SONG
+		Anya: WANNA BE MY CHUMUK CHALOO1 O__OOOO__OOO
+- How are you doing today?
+	Anya: Ughhh doing alright, could be better tbh I got work tomorrow
+	- Where do you worik?
+		Anya: I work at Snapple dude, good pay but its a grinndd
+	- That;'s crazy, I'm still in school, how is the work life
+		Anya: Honestly not bad, but each day by day goes fast, its pretty exhausting work, it pays good tho, but...
+	- HOW MUCH ARE U MAKING?!?!?
+		Anya: Wh~ WHa What??
+- OK BUB WHERE WERE YOU ON JANUARY 17th?
+	Anya: Wha~ I~ I don't know?? What was going on Janurary 17th?  I
+	- That was the dat Jim Carrey was born! Dum Dum
+		Anya: ....what? Like the guy who played the dude from the mask?
+	- Were you by any chance at the Lunch tables sipping orange jiuce?
+		Anya: UhhHm WHATT?!?! hOw do u know that??
+	- YOU KKNOW WHAT HAPPENED ANSWER MEEE
+		Anya: OKOKOKKK I stole an oranjge juice from the cafeteria!!

@@ -22,6 +22,10 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Anya": "res://Anya.dch",
+"Brum": "res://Brum.dch",
+"Shelby": "res://Shelby.dch",
+"Strooz": "res://Strooz.dch",
 "dungeon_master": "res://dungeon_master.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
@@ -43,7 +47,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 left={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"echo":false,"script":null)
-]
+, null]
 }
 right={
 "deadzone": 0.5,
