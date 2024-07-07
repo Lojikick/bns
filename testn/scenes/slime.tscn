@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bymlk0oub2eec"]
+[gd_scene load_steps=11 format=3 uid="uid://bymlk0oub2eec"]
 
 [ext_resource type="Texture2D" uid="uid://c6e2unx3l5sib" path="res://assets/slime.png" id="1_env41"]
 [ext_resource type="Script" path="res://scenes/slime.gd" id="1_j1rkm"]
@@ -43,7 +43,11 @@ animations = [{
 radius = 59.6657
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vfbj7"]
-radius = 5.09902
+radius = 7.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_710hd"]
+radius = 7.0
+height = 14.0
 
 [node name="slime" type="CharacterBody2D"]
 collision_layer = 2
@@ -61,12 +65,17 @@ collision_layer = 2
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionarea"]
-visible = false
 shape = SubResource("CircleShape2D_3rc3b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_vfbj7")
+
+[node name="hitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_710hd")
 
 [connection signal="body_entered" from="detectionarea" to="." method="_on_detectionarea_body_entered"]
 [connection signal="body_exited" from="detectionarea" to="." method="_on_detectionarea_body_exited"]

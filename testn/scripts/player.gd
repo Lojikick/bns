@@ -78,7 +78,7 @@ func handleCollision():
 	for i in get_slide_collision_count(): 
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
-		anxietyAttacked()
+		
 		
 	
 	
@@ -93,3 +93,8 @@ func trustGained():
 	#TODO: edit so that the trust is "attached" to "enemy", not player.
 	currTrust += 10
 	trustChanged.emit()
+
+
+func _on_hurt_box_area_entered(area):
+	if area.name == "hitBox":
+		anxietyAttacked()

@@ -2321,9 +2321,9 @@ player = NodePath("../Player")
 
 [node name="TrustBar" type="ProgressBar" parent="." node_paths=PackedStringArray("player")]
 offset_left = 58.0
-offset_top = 3.0
+offset_top = 4.0
 offset_right = 91.0
-offset_bottom = 30.0
+offset_bottom = 31.0
 script = ExtResource("7_xg4m3")
 player = NodePath("../Player")
 
