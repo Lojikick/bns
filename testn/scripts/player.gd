@@ -72,6 +72,15 @@ func _physics_process(delta):
 		else:
 			$AnimatedSprite2D.animation = "front"
 	move_and_slide()
+	handleCollision()
+
+func handleCollision():
+	for i in get_slide_collision_count(): 
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		anxietyAttacked()
+		
+	
 	
 func anxietyAttacked():
 	#Function that emits a signal if the player is hurt (anxiety up) by an enemy.

@@ -1,16 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0pr3m6cajd3e"]
+[gd_scene load_steps=11 format=3 uid="uid://d0pr3m6cajd3e"]
 
 [ext_resource type="PackedScene" uid="uid://d13t3renrqami" path="res://scenes/player.tscn" id="1_lqs1g"]
-[ext_resource type="PackedScene" uid="uid://038oednx3haa" path="res://damage_anx.tscn" id="1_xxcg7"]
-[ext_resource type="Script" path="res://damage_anx.gd" id="2_20x86"]
 [ext_resource type="PackedScene" uid="uid://bymlk0oub2eec" path="res://scenes/slime.tscn" id="2_r4xn5"]
 [ext_resource type="Script" path="res://scenes/tilemap.gd" id="3_j2d0u"]
 [ext_resource type="Texture2D" uid="uid://cbqt3n5hrn8c4" path="res://assets/tilesets/tavenAndInn.png" id="3_mdohf"]
 [ext_resource type="Texture2D" uid="uid://c3my7hy1rpqx8" path="res://assets/tilesets/wallsAndFloors_withText.png" id="4_xbesb"]
 [ext_resource type="Script" path="res://scenes/anxiety.gd" id="6_wajht"]
 [ext_resource type="Script" path="res://scenes/trust.gd" id="7_xg4m3"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_mwe3r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ic1fy"]
 texture = ExtResource("3_mdohf")
@@ -2285,13 +2281,6 @@ sources/1 = SubResource("TileSetAtlasSource_ocubj")
 [node name="Game" type="Node2D"]
 position = Vector2(-4, -1)
 
-[node name="DamageAnx" parent="." instance=ExtResource("1_xxcg7")]
-position = Vector2(174, 69)
-script = ExtResource("2_20x86")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageAnx"]
-shape = SubResource("CircleShape2D_mwe3r")
-
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(116, 49)
 tile_set = SubResource("TileSet_5fup1")
@@ -2326,5 +2315,3 @@ offset_right = 91.0
 offset_bottom = 30.0
 script = ExtResource("7_xg4m3")
 player = NodePath("../Player")
-
-[connection signal="body_entered" from="DamageAnx" to="DamageAnx" method="_on_body_entered"]
