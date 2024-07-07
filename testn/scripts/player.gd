@@ -97,4 +97,5 @@ func trustGained():
 
 func _on_hurt_box_area_entered(area):
 	if area.name == "hitBox":
+		##"hitBox" is the name of the damage-inflictable area of the slime.
 		anxietyAttacked()

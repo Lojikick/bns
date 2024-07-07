@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0pr3m6cajd3e"]
+[gd_scene load_steps=16 format=3 uid="uid://d0pr3m6cajd3e"]
 
 [ext_resource type="PackedScene" uid="uid://d13t3renrqami" path="res://scenes/player.tscn" id="1_lqs1g"]
 [ext_resource type="PackedScene" uid="uid://038oednx3haa" path="res://damage_anx.tscn" id="1_xxcg7"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://c3my7hy1rpqx8" path="res://assets/tilesets/wallsAndFloors_withText.png" id="4_xbesb"]
 [ext_resource type="Script" path="res://scenes/anxiety.gd" id="6_wajht"]
 [ext_resource type="Script" path="res://scenes/trust.gd" id="7_xg4m3"]
+[ext_resource type="Texture2D" uid="uid://dpwi3r7odsaqu" path="res://assets/healthbarUnder.png" id="10_oamda"]
+[ext_resource type="Texture2D" uid="uid://cm1gl0om37xy" path="res://assets/healthbarProgress.png" id="11_v2q8b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mwe3r"]
 
@@ -2310,21 +2312,22 @@ position = Vector2(174, 69)
 unique_name_in_owner = true
 position = Vector2(45, 62)
 
-[node name="AnxietyBar" type="ProgressBar" parent="." node_paths=PackedStringArray("player")]
-offset_left = 7.0
-offset_top = 4.0
-offset_right = 54.0
-offset_bottom = 31.0
-value = 100.0
-script = ExtResource("6_wajht")
-player = NodePath("../Player")
-
 [node name="TrustBar" type="ProgressBar" parent="." node_paths=PackedStringArray("player")]
-offset_left = 58.0
+offset_left = 73.0
 offset_top = 4.0
-offset_right = 91.0
+offset_right = 108.0
 offset_bottom = 31.0
 script = ExtResource("7_xg4m3")
+player = NodePath("../Player")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." node_paths=PackedStringArray("player")]
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 71.0
+offset_bottom = 48.0
+texture_under = ExtResource("10_oamda")
+texture_progress = ExtResource("11_v2q8b")
+script = ExtResource("6_wajht")
 player = NodePath("../Player")
 
 [connection signal="body_entered" from="DamageAnx" to="DamageAnx" method="_on_body_entered"]
