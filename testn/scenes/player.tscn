@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://d13t3renrqami"]
+[gd_scene load_steps=42 format=3 uid="uid://d13t3renrqami"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_vo2d2"]
 [ext_resource type="Texture2D" uid="uid://dxbrlj3nd05td" path="res://assets/player_flipped.png" id="2_h73t1"]
@@ -291,6 +291,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u45ib"]
 size = Vector2(15, 21)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ia4s6"]
+
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 3
@@ -304,3 +306,13 @@ autoplay = "front"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 8.5)
 shape = SubResource("RectangleShape2D_u45ib")
+
+[node name="Direction" type="Marker2D" parent="."]
+
+[node name="ActionableFinder" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_ia4s6")

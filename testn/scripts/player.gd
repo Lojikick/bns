@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 const JUMP_VELOCITY = -400.0
 @export var speed = 200
+@onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
 var idle_anim = {"side": "side_idle",
 				 "side_idle" : "side_idle",
@@ -17,6 +18,15 @@ var screen_size
 func _ready():
 	screen_size = get_viewport_rect().size
 
+func _unhandled_input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_input"):
+		print("Pressed UI Key")
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			print("Dialogue Triggered--")
+			return
+			#DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"), "start")
 func _physics_process(delta):
 	# Add the gravity.
 	#if not is_on_floor():

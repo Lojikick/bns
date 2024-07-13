@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0pr3m6cajd3e"]
+[gd_scene load_steps=12 format=3 uid="uid://d0pr3m6cajd3e"]
 
 [ext_resource type="PackedScene" uid="uid://d13t3renrqami" path="res://scenes/player.tscn" id="1_lqs1g"]
 [ext_resource type="PackedScene" uid="uid://bymlk0oub2eec" path="res://scenes/slime.tscn" id="2_r4xn5"]
 [ext_resource type="Script" path="res://scenes/tilemap.gd" id="3_j2d0u"]
 [ext_resource type="Texture2D" uid="uid://cbqt3n5hrn8c4" path="res://assets/tilesets/tavenAndInn.png" id="3_mdohf"]
 [ext_resource type="Texture2D" uid="uid://c3my7hy1rpqx8" path="res://assets/tilesets/wallsAndFloors_withText.png" id="4_xbesb"]
+[ext_resource type="PackedScene" uid="uid://fstph1rnlsxa" path="res://scenes/actionable.tscn" id="5_20ymp"]
+[ext_resource type="Resource" uid="uid://ci5x3aimfwgp6" path="res://dialogue/test.dialogue" id="6_w4tfp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ic1fy"]
 texture = ExtResource("3_mdohf")
@@ -2276,6 +2278,9 @@ custom_data_layer_0/type = 4
 sources/0 = SubResource("TileSetAtlasSource_ic1fy")
 sources/1 = SubResource("TileSetAtlasSource_ocubj")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4a51o"]
+radius = 18.0
+
 [node name="Game" type="Node2D"]
 position = Vector2(-4, -1)
 
@@ -2292,6 +2297,12 @@ zoom = Vector2(4.005, 4.005)
 
 [node name="Slime" parent="." instance=ExtResource("2_r4xn5")]
 position = Vector2(174, 69)
+
+[node name="Actionable" parent="Slime" instance=ExtResource("5_20ymp")]
+dialogue_resource = ExtResource("6_w4tfp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slime/Actionable"]
+shape = SubResource("CircleShape2D_4a51o")
 
 [node name="Player" parent="." instance=ExtResource("1_lqs1g")]
 unique_name_in_owner = true
