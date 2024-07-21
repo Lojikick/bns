@@ -1,0 +1,15 @@
+~ start
+
+Brum: We're gonna do some interrogating, you gott answer.
+Shelby: Here are some choices.
+Suspect: Ok!!
+- Whats up
+	Brum: You picked the first one.
+	Suspect: Yeah, I noticed
+- Second one
+	Shelby: You picked the second one.
+	Suspect: Brooo
+- End the conversation => END
+Nathan: For more information see the online documentation.
+
+=> END

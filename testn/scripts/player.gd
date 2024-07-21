@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
-
+signal scene_change_requested
 
 const JUMP_VELOCITY = -400.0
+const character_name = "Brum"
 @export var speed = 200
+@onready var actionable_finder: Area2D = $Direction/ActionableFinder
+@onready var game_manager = $"../GameManager"
 
 var idle_anim = {"side": "side_idle",
 				 "side_idle" : "side_idle",
@@ -16,7 +19,22 @@ var screen_size
 #var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready():
 	screen_size = get_viewport_rect().size
-
+func change_to_new_scene():
+	get_tree().change_scene_to_file("res://scenes/dialogue_ui.tscn")
+func _unhandled_input(_event: InputEvent) -> void:
+	
+	if Input.is_action_just_pressed("ui_input"):
+		print("Pressed UI Key")
+		_on_dialogue_finished()
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			change_to_new_scene()
+			#change_to_new_scene()
+			#actionables[0].action()
+			print("Dialogue Triggered--")
+			
+			return
+			
 func _physics_process(delta):
 	# Add the gravity.
 	#if not is_on_floor():
@@ -63,3 +81,7 @@ func _physics_process(delta):
 		else:
 			$AnimatedSprite2D.animation = "front"
 	move_and_slide()
+
+
+func _on_dialogue_finished():
+	game_manager.complete_dialogue()

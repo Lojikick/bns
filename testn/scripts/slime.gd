@@ -1,5 +1,7 @@
 extends CharacterBody2D
 #
+
+@export var character_name: String = "Placeholder"
 ##hunch, something about scene hierarchy.. not entirely sure its kinda weird....
 #@onready var tilemap = $"../TileMap"
 ##BADBAD VERY BAD, JUST for testing, replace with official way later
