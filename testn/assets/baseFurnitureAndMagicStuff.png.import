@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://uai704mk4ana"
-path="res://.godot/imported/baseFurnitureAndMagicStuff.png-047727c54152f469771ff21cc9faa04b.ctex"
+path="res://.godot/imported/baseFurnitureAndMagicStuff.png-cd99de7eda32cf1e1c744cecdc6cfe71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/baseFurnitureAndMagicStuff.png"
-dest_files=["res://.godot/imported/baseFurnitureAndMagicStuff.png-047727c54152f469771ff21cc9faa04b.ctex"]
+source_file="res://assets/baseFurnitureAndMagicStuff.png"
+dest_files=["res://.godot/imported/baseFurnitureAndMagicStuff.png-cd99de7eda32cf1e1c744cecdc6cfe71.ctex"]
 
 [params]
 
