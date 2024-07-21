@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://d0pr3m6cajd3e"]
+[gd_scene load_steps=14 format=3 uid="uid://d0pr3m6cajd3e"]
 
+[ext_resource type="Script" path="res://scripts/Level.gd" id="1_aeydq"]
+[ext_resource type="Script" path="res://scripts/GameManager.gd" id="1_halev"]
 [ext_resource type="PackedScene" uid="uid://d13t3renrqami" path="res://scenes/player.tscn" id="1_lqs1g"]
 [ext_resource type="PackedScene" uid="uid://bymlk0oub2eec" path="res://scenes/slime.tscn" id="2_r4xn5"]
-[ext_resource type="Script" path="res://scenes/tilemap.gd" id="3_j2d0u"]
+[ext_resource type="Script" path="res://scripts/tilemap.gd" id="3_j2d0u"]
 [ext_resource type="Texture2D" uid="uid://cbqt3n5hrn8c4" path="res://assets/tilesets/tavenAndInn.png" id="3_mdohf"]
 [ext_resource type="Texture2D" uid="uid://c3my7hy1rpqx8" path="res://assets/tilesets/wallsAndFloors_withText.png" id="4_xbesb"]
 [ext_resource type="PackedScene" uid="uid://fstph1rnlsxa" path="res://scenes/actionable.tscn" id="5_20ymp"]
@@ -67,15 +69,19 @@ texture = ExtResource("3_mdohf")
 11:1/0 = 0
 11:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:1/0/physics_layer_0/angular_velocity = 0.0
+11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:1/0 = 0
 12:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:1/0/physics_layer_0/angular_velocity = 0.0
+12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.125, 8, 2.125, 8, 8, -8, 8)
 13:1/0 = 0
 13:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:1/0/physics_layer_0/angular_velocity = 0.0
+13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.125, 8, 2.125, 8, 8, -8, 8)
 14:1/0 = 0
 14:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:1/0/physics_layer_0/angular_velocity = 0.0
+14:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.125, 8, 2.125, 8, 8, -8, 8)
 16:1/0 = 0
 16:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:1/0/physics_layer_0/angular_velocity = 0.0
@@ -88,6 +94,7 @@ texture = ExtResource("3_mdohf")
 19:1/0 = 0
 19:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 19:1/0/physics_layer_0/angular_velocity = 0.0
+19:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:1/0 = 0
 21:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 21:1/0/physics_layer_0/angular_velocity = 0.0
@@ -139,27 +146,35 @@ texture = ExtResource("3_mdohf")
 11:2/0 = 0
 11:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:2/0/physics_layer_0/angular_velocity = 0.0
+11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:2/0 = 0
 12:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:2/0/physics_layer_0/angular_velocity = 0.0
+12:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:2/0 = 0
 13:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:2/0/physics_layer_0/angular_velocity = 0.0
+13:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:2/0 = 0
 14:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:2/0/physics_layer_0/angular_velocity = 0.0
+14:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 16:2/0 = 0
 16:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:2/0/physics_layer_0/angular_velocity = 0.0
+16:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:2/0 = 0
 17:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 17:2/0/physics_layer_0/angular_velocity = 0.0
+17:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:2/0 = 0
 18:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:2/0/physics_layer_0/angular_velocity = 0.0
+18:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:2/0 = 0
 19:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 19:2/0/physics_layer_0/angular_velocity = 0.0
+19:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:2/0 = 0
 21:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 21:2/0/physics_layer_0/angular_velocity = 0.0
@@ -2283,27 +2298,62 @@ radius = 18.0
 
 [node name="Game" type="Node2D"]
 position = Vector2(-4, -1)
+script = ExtResource("1_aeydq")
+level_name = "Diner"
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("Velma", "Strooz", "Anya", "Baljeet")]
+script = ExtResource("1_halev")
+Player = ExtResource("1_lqs1g")
+Velma = NodePath("../Velma")
+Strooz = NodePath("../Strooz")
+Anya = NodePath("../Anya")
+Baljeet = NodePath("../Baljeet")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(116, 49)
 tile_set = SubResource("TileSet_5fup1")
 format = 2
+layer_0/name = "Floor"
 layer_0/tile_data = PackedInt32Array(65533, 720897, 2, 131069, 720897, 2, 196605, 720897, 2, 196606, 720897, 2, 196607, 720897, 2, 131071, 720897, 2, 131070, 65537, 6, 65534, 720897, 2, 131072, 720897, 2, 65536, 720897, 2, 0, 720897, 2, 65535, 720897, 2, 262142, 720897, 2, 262143, 720897, 2, 327679, 720897, 2, 262144, 720897, 2, 262145, 720897, 2, 196610, 720897, 2, 196611, 720897, 2, 131075, 720897, 2, 131074, 720897, 2, 65538, 720897, 2, 65537, 720897, 2, 196608, 720897, 2, 196609, 720897, 2, 131073, 720897, 2, 65539, 720897, 2, 2, 720897, 2, 1, 720897, 2, 3, 720897, 2, 4, 720897, 2, 65540, 720897, 2, 65541, 720897, 2, 131077, 720897, 2, 196612, 720897, 2, 262148, 720897, 2, 262147, 720897, 2, 262141, 720897, 2, 327678, 720897, 2, 131076, 720897, 2, 262146, 720897, 2, 327677, 720897, 2, 196613, 720897, 2, 5, 720897, 2, 262149, 720897, 2, -7, 720897, 2, -6, 720897, 2, -5, 720897, 2, -4, 720897, 2, -3, 720897, 2, -2, 720897, 2, -1, 720897, 2, -65536, 720897, 2, -65535, 720897, 2, -65534, 720897, 2, -65533, 720897, 2, -65532, 720897, 2, -65531, 720897, 2, -65530, 720897, 2, 6, 720897, 2, 7, 720897, 2, 65543, 720897, 2, 131079, 720897, 2, 196615, 720897, 2, 262151, 720897, 2, 262150, 720897, 2, 196614, 720897, 2, 131078, 720897, 2, 65542, 720897, 2, 131068, 720897, 2, 131067, 720897, 2, 65531, 720897, 2, 65530, 720897, 2, 65529, 720897, 2, 65532, 720897, 2, 131066, 720897, 2, 131065, 720897, 2, 196601, 720897, 2, 262137, 720897, 2, 262138, 720897, 2, 327674, 720897, 2, 327675, 720897, 2, 327676, 720897, 2, 262140, 720897, 2, 262139, 720897, 2, 196602, 720897, 2, 196603, 720897, 2, 196604, 720897, 2, 327673, 720897, 2, -65529, 720897, 2, -65543, 327681, 7, -65542, 327681, 7, -65541, 327681, 7, -65540, 327681, 7, -65539, 327681, 7, -65538, 327681, 7, -65537, 327681, 7, -131072, 327681, 7, -131071, 327681, 7, -131070, 327681, 7, -131069, 327681, 7, -131068, 327681, 7, -131067, 327681, 7, -131066, 327681, 7, -131065, 327681, 7, -131079, 327681, 6, -131078, 327681, 6, -131077, 327681, 6, -131076, 327681, 6, -131075, 327681, 6, -131074, 327681, 6, -131073, 327681, 6, -196608, 327681, 6, -196607, 327681, 6, -196606, 327681, 6, -196605, 327681, 6, -196604, 327681, 6, -196603, 327681, 6, -196602, 327681, 6, -196601, 327681, 6)
+layer_1/name = "Object"
+layer_1/tile_data = PackedInt32Array(65536, 786432, 7, 131072, 786432, 8, 196608, 786432, 9, 196609, 851968, 9, 196610, 851968, 9, 196611, 851968, 9, 196612, 851968, 9, 196613, 851968, 9, 196614, 1114112, 9, 131078, 1114112, 7, 196602, 786432, 13, 262138, 786432, 14, 196603, 851968, 13, 262139, 851968, 14, 196604, 917504, 13, 262140, 917504, 14, 196605, 983040, 13, 262141, 983040, 14, -65542, 786432, 13, -6, 786432, 14, -65541, 851968, 13, -5, 851968, 14, -65540, 917504, 13, -4, 917504, 14, -65539, 983040, 13, -3, 983040, 14)
 script = ExtResource("3_j2d0u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(129, 66)
 zoom = Vector2(4.005, 4.005)
 
-[node name="Slime" parent="." instance=ExtResource("2_r4xn5")]
-position = Vector2(174, 69)
+[node name="Baljeet" parent="." instance=ExtResource("2_r4xn5")]
+position = Vector2(200, 45)
+character_name = "Baljeet"
 
-[node name="Actionable" parent="Slime" instance=ExtResource("5_20ymp")]
+[node name="Anya" parent="." instance=ExtResource("2_r4xn5")]
+position = Vector2(94, 96)
+character_name = "Anya"
+
+[node name="Strooz" parent="." instance=ExtResource("2_r4xn5")]
+position = Vector2(94, 44)
+character_name = "Strooz"
+
+[node name="Velma" parent="." instance=ExtResource("2_r4xn5")]
+position = Vector2(199, 77)
+character_name = "Velma"
+
+[node name="Actionable" parent="Velma" instance=ExtResource("5_20ymp")]
 dialogue_resource = ExtResource("6_w4tfp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Slime/Actionable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Velma/Actionable"]
 shape = SubResource("CircleShape2D_4a51o")
 
 [node name="Player" parent="." instance=ExtResource("1_lqs1g")]
 unique_name_in_owner = true
 position = Vector2(45, 62)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 67.0
+offset_top = 50.0
+offset_right = 199.0
+offset_bottom = 81.0
+text = "Switch To Scene"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
