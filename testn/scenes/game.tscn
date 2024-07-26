@@ -1,14 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0pr3m6cajd3e"]
+[gd_scene load_steps=12 format=3 uid="uid://d0pr3m6cajd3e"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_aeydq"]
-[ext_resource type="Script" path="res://scripts/GameManager.gd" id="1_halev"]
 [ext_resource type="PackedScene" uid="uid://d13t3renrqami" path="res://scenes/player.tscn" id="1_lqs1g"]
 [ext_resource type="PackedScene" uid="uid://bymlk0oub2eec" path="res://scenes/slime.tscn" id="2_r4xn5"]
 [ext_resource type="Script" path="res://scripts/tilemap.gd" id="3_j2d0u"]
 [ext_resource type="Texture2D" uid="uid://cbqt3n5hrn8c4" path="res://assets/tilesets/tavenAndInn.png" id="3_mdohf"]
 [ext_resource type="Texture2D" uid="uid://c3my7hy1rpqx8" path="res://assets/tilesets/wallsAndFloors_withText.png" id="4_xbesb"]
 [ext_resource type="PackedScene" uid="uid://fstph1rnlsxa" path="res://scenes/actionable.tscn" id="5_20ymp"]
-[ext_resource type="Resource" uid="uid://ci5x3aimfwgp6" path="res://dialogue/test.dialogue" id="6_w4tfp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ic1fy"]
 texture = ExtResource("3_mdohf")
@@ -2301,14 +2299,6 @@ position = Vector2(-4, -1)
 script = ExtResource("1_aeydq")
 level_name = "Diner"
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("Velma", "Strooz", "Anya", "Baljeet")]
-script = ExtResource("1_halev")
-Player = ExtResource("1_lqs1g")
-Velma = NodePath("../Velma")
-Strooz = NodePath("../Strooz")
-Anya = NodePath("../Anya")
-Baljeet = NodePath("../Baljeet")
-
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(116, 49)
 tile_set = SubResource("TileSet_5fup1")
@@ -2340,14 +2330,10 @@ position = Vector2(199, 77)
 character_name = "Velma"
 
 [node name="Actionable" parent="Velma" instance=ExtResource("5_20ymp")]
-dialogue_resource = ExtResource("6_w4tfp")
+script = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Velma/Actionable"]
 shape = SubResource("CircleShape2D_4a51o")
-
-[node name="Player" parent="." instance=ExtResource("1_lqs1g")]
-unique_name_in_owner = true
-position = Vector2(45, 62)
 
 [node name="Button" type="Button" parent="."]
 offset_left = 67.0
@@ -2355,5 +2341,9 @@ offset_top = 50.0
 offset_right = 199.0
 offset_bottom = 81.0
 text = "Switch To Scene"
+metadata/_edit_use_anchors_ = true
+
+[node name="Brum" parent="." instance=ExtResource("1_lqs1g")]
+position = Vector2(144, 25)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
