@@ -16,7 +16,7 @@ func _ready() -> void:
 		print("Game node found:", current_level.name)
 		if current_level.has_signal("level_changed"):
 			current_level.connect("level_changed", handle_level_changed)
-		
+		0
 		if "level_name" in current_level:
 			current_level_name = current_level.level_name
 			print("Current Level Name: ", current_level_name)
